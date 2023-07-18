@@ -42,6 +42,15 @@ public class MenuPausa : MonoBehaviour
         menuPausa.SetActive(false);
     }
 
+    public void Reset()
+    {
+        juegoPausado = false;
+        Time.timeScale = 1f;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
     public void MainMenu()
     {
         juegoPausado = false;
